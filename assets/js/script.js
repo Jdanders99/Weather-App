@@ -25,9 +25,41 @@ function getWeatherData(lon, lat, city) {
 }
 
 function currentDay (data, city) {
+    var date = new Date((data.current.dt * 1000) - (data.timezone_offset * 1000))
+    var icon = data.current.weather[0].icon;
 
+    var currentyCityEl = document.getElementById("currentCity");
+    var currentDateEl = document.getElementById("currentDate");
+    var currentIconEl = document.getElementById("currentIcon");
+    var currentTempEl = document.getElementById("currentTemp");
+    var currentHumidityEl = document.getElementById("currentHumidity");
+    var currentWindEl = document.getElementById("currentWind");
+
+    currentyCityEl.textContent = city;
+    currentDateEl.textContent = date.toLocaleDateString("en-US");
+    currentIconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + icon + "@2x.png");
+    currentTempEl.textContent = data.current.temp;
+    currentHumidityEl.textContent = data.current.humidity;
+    currentWindEl.textContent = data.current.wind_speed;
 }
 
 function fiveDay(data) {
-    
+        for (var i = 1; i < 6; i++) {
+            var date = new Date((data.daily[i].dt * 1000) - (data.timezone_offset * 1000));
+            var icon = data.daily[i].weather[0].icon;
+
+            var dateEl = document.getElementById("date" + i);
+            var iconEl = document.getElementById("icon" + i);
+            var tempEl = document.getElementById("temp" + i);
+            var humidityEl = document.getElementById("humidity" + i);
+            var windEl = document.getElementById("wind" + i);
+
+            dateEl.textContent = date.toLocaleDateString("en-US");
+            iconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + icon + "@2x.png");
+            tempEl.textContent = "Temp: " + data.daily[i].temp.day + "°F";
+            humidityEl.textContent = "Humidity: " + data.daily[i].humidity + "%";
+            windEl.textContent = "Wind Spd: " + data.daily[i].wind_speed + "mph";
+
+            forecastsEl.classList.remove("hidden");
+    }
 }
