@@ -36,3 +36,17 @@ button:active {
     transition: none;
     background-color: rgb(130, 223, 255)
 }
+
+hr {
+    border: 1px solid black;
+    width: 56%;
+    margin: 20px auto 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.mainBody {
+    margin: 0;
+}
