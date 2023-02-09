@@ -110,3 +110,13 @@ function updateHistory() {
         }
     }
 }
+
+searchBtn.addEventListener("click", convertSearch);
+input.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        document.getElementById("searchBtn").click();
+    }
+});
+
+loadHistory();
+updateHistory();
