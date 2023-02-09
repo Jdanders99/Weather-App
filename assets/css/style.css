@@ -62,3 +62,26 @@ hr {
     border-radius: 3px;
     text-align: center;
 }
+
+.icon {
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+}
+
+.currentTitle {
+    font-size: 160%;
+    font-weight: bold;
+}
+
+.fiveDayFC ul {
+    background-color: lightblue;
+    height: 160px;
+    border: 2px solid black;
+    margin: 0 6px;
+    box-shadow: rgb(102, 102, 102) 3px 3px;
+}
+
+#forecasts {
+    margin: 10px;
+}
