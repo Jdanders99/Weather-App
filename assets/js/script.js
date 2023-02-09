@@ -14,6 +14,7 @@ function convertSearch() {
             var city = data[0].name;
             getWeatherData(lon, lat, city);
             saveHistory(city);
+            updateHistory();
             document.getElementById("input").value = "";
         })
 }
@@ -88,5 +89,11 @@ function loadHistory() {
 }
 
 function updateHistory() {
-
+    if (historyArray != null) {
+        for (var i = 0; i < historyArray.length; i++) {
+            var historyBtn = document.getElementById("btn" + i);
+            historyBtn.textContent = historyArray[i];
+            historyBtn.addEventListener("click", function() {convertHistorySearch(event.target)});
+        }
+    }
 }
