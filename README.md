@@ -1,4 +1,4 @@
-# E Commerce Back End 
+# Weather App
 ![License Badge](https://img.shields.io/badge/license-MIT-orange)
   
 ## Table of Contents
