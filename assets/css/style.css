@@ -8,7 +8,7 @@
 header {
     color: white;
     font-size: 120%;
-    background-image: linear-gradient(rgb(0, 170, 255), rgb(14, 2, 239));
+    background-image: linear-gradient(rgb(255, 0, 0), rgb(92, 0, 0));
     height: 60px;
     text-align: center;
     padding: 7px;
@@ -23,18 +23,18 @@ h4 {
 
 button {
     margin-top: 10px;
-    background-color: lightblue;
+    background-color: rgb(228, 105, 105);
     border-radius: 6px;
     width: 56%;
 }
 
 button:hover {
-    background-color: rgb(214, 245, 255);
+    background-color: rgb(245, 156, 156);
 }
 
 button:active {
     transition: none;
-    background-color: rgb(130, 223, 255)
+    background-color: rgb(245, 156, 156);
 }
 
 hr {
@@ -49,4 +49,16 @@ hr {
 
 .mainBody {
     margin: 0;
+}
+
+.searchArea {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.searchArea input {
+    width: 56%;
+    border-radius: 3px;
+    text-align: center;
 }
