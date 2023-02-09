@@ -13,6 +13,7 @@ function convertSearch() {
             var lat = data[0].lat;
             var city = data[0].name;
             getWeatherData(lon, lat, city);
+            saveHistory(city);
             document.getElementById("input").value = "";
         })
 }
@@ -67,7 +68,17 @@ function fiveDay(data) {
 }
 
 function saveHistory(city) {
+    if (!historyArray) {
+        historyArray = [city];
+    } else {
+        historyArray.unshift(city);
+    };
 
+    if (historyArray.length > 5) {
+        var delExtra = historyArray.pop();
+    }
+
+    localStorage.setItem("history", JSON.stringify(historyArray));
 }
 
 function loadHistory() {
