@@ -1,6 +1,8 @@
 var searchBtn = document.getElementById("searchBtn");
 var forecastsEl = document.getElementById("forecasts");
 
+var historyArray = loadHistory();
+
 function convertSearch() {
     var input = document.getElementById("input").value.trim();
 
@@ -62,4 +64,18 @@ function fiveDay(data) {
 
             forecastsEl.classList.remove("hidden");
     }
+}
+
+function saveHistory(city) {
+
+}
+
+function loadHistory() {
+    var historyArray = JSON.parse(localStorage.getItem("history"));
+
+    return historyArray;
+}
+
+function updateHistory() {
+
 }
